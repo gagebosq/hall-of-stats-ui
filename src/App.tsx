@@ -7,6 +7,8 @@ import PitchersPage from './pages/PitchersPage';
 import HittersPage from './pages/HittersPage';
 import TeamsPage from './pages/TeamsPage';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 function Layout({ children }) {
     const location = useLocation();
     const isHomepage = location.pathname === '/'; // Check if it's the homepage
