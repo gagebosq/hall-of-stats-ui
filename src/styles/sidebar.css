@@ -1,12 +1,12 @@
 /* Sidebar.css */
 .sidebar {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: 3px;
     width: 200px; /* adjust this value to set the sidebar's width */
     height: 100vh;
-    background-color: #333;
-    color: #fff;
+    background-color: #747bff;
+    color: #646cff;
     padding: 20px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
