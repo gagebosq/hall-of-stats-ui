@@ -15,10 +15,7 @@
   left: 40px;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #ffffff);
 }
 
 @keyframes logo-spin {
@@ -42,6 +39,8 @@
 
 .sidebar {
   position: absolute;
+  display: flex;
+  flex-direction: row;
   top: 0px;
   left: 3px;
   width: 250px; /* adjust this value to set the sidebar's width */
@@ -60,25 +59,43 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.content {
+  /* Allow content to occupy the remaining space */
+  display: flex;              /* Use flexbox for centering */
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  text-align: center;         /* Center text alignment */
+  height: 100vh;              /* Ensure full height of viewport */
+  margin-left: 200px;         /* Push content to the right of the sidebar */
+  padding: 20px;              /* Optional: Add some padding */
+}
+.main-content {
+    margin-left: 200px; /* Offset content by the width of the sidebar */
+    flex-grow: 1; /* Allow content to grow */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    padding: 20px; /* Optional: Padding for content */
+    box-sizing: border-box;
+}
 
-/*.sidebar ul {*/
-/*  position: relative;*/
-/*  list-style: none;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  top: 100px;*/
-/*}*/
+.homepage-content {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  background-color: #f8f9fa; /* Optional background color */
+}
 
-/*.sidebar li {*/
-/*  padding: 1px;*/
-/*  border-bottom: 1px solid #333;*/
-/*}*/
+.homepage h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
 
-/*.sidebar a {*/
-/*  color: #fff;*/
-/*  text-decoration: none;*/
-/*}*/
+.homepage p {
+  font-size: 1.25rem;
+  color: #555;
+}
 
-/*.sidebar a.active {*/
-/*  background-color: #444;*/
-/*}*/
