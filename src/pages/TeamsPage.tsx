@@ -29,36 +29,47 @@ const TeamsPage = () => {
 
     return (
         <div className="content">
-            <h1>Teams</h1>
-
-            {/* Search Bar */}
-            <form onSubmit={handleSearch} className="search-container">
-                <input
-                    type="text"
-                    className="search-bar"
-                    placeholder="Search teams by name..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <button type="submit" className="search-button">Enter</button>
-            </form>
+            {/* Title and Search Section */}
+            <div className="table-header">
+                <h1>Teams</h1>
+                <form onSubmit={handleSearch} className="search-container">
+                    <input
+                        type="text"
+                        className="search-bar"
+                        placeholder="Search teams by name..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button type="submit" className="search-button">Enter</button>
+                </form>
+            </div>
 
             {/* Display Results */}
             {error && <p className="error">{error}</p>}
             {teams.length > 0 && (
-                <div className="team-info">
-                    {teams.map((team, index) => (
-                        <div key={index} className="team-card">
-                            <h2>{team.teamName}</h2>
-                            <ul>
-                                {Object.entries(team).map(([key, value]) => (
-                                    <li key={key}>
-                                        <strong>{key.replace(/_/g, ' ').toUpperCase()}:</strong> {value}
-                                    </li>
+                <div className="team-table-container">
+                    <table className="team-table">
+                        <thead>
+                        <tr>
+                            {Object.keys(teams[0]).map((key) => (
+                                <th key={key}>{key.replace(/_/g, ' ').toUpperCase()}</th>
+                            ))}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {teams.map((team, rowIndex) => (
+                            <tr key={rowIndex}>
+                                {Object.values(team).map((value, colIndex) => (
+                                    <td key={colIndex}>
+                                        {typeof value === 'object' && value !== null
+                                            ? JSON.stringify(value)
+                                            : value}
+                                    </td>
                                 ))}
-                            </ul>
-                        </div>
-                    ))}
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
                 </div>
             )}
         </div>
@@ -66,3 +77,4 @@ const TeamsPage = () => {
 };
 
 export default TeamsPage;
+

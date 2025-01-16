@@ -60,14 +60,10 @@
 }
 
 .content {
-  /* Allow content to occupy the remaining space */
-  display: flex;              /* Use flexbox for centering */
-  justify-content: center;    /* Center horizontally */
-  align-items: center;        /* Center vertically */
-  text-align: center;         /* Center text alignment */
-  height: 100vh;              /* Ensure full height of viewport */
-  margin-left: 200px;         /* Push content to the right of the sidebar */
-  padding: 20px;              /* Optional: Add some padding */
+  display: flex; /* Flexbox to separate sidebar and main content */
+  margin-left: 250px; /* Offset content by the width of the sidebar */
+  padding: 1rem;
+  flex-direction: column; /* Ensure the content stacks vertically */
 }
 .main-content {
     margin-left: 200px; /* Offset content by the width of the sidebar */
@@ -129,62 +125,28 @@
 .button:active {
   transform: scale(0.95); /* Slightly shrink the button on click */
 }
-/* Search Bar Container */
-.search-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-bottom: 2rem; /* Space between the search bar and content */
-}
-
-/* Search Bar Styles */
-.search-bar {
-  width: 50%; /* Adjust width as needed */
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}
-
-
-/* Search Bar Container */
-.search-container {
-  display: flex;
-  justify-content: center;
+/* Title and Search Bar Section */
+.table-header {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
-.search-bar {
-  width: 50%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+.table-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
 }
 
-.search-bar:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-}/* Search Bar Styles */
+/* Search Bar Styles */
 .search-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .search-bar {
-  width: 50%;
+  width: 40%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -207,29 +169,36 @@
   background-color: #0056b3;
 }
 
-.error {
-  color: red;
-  font-size: 1.1rem;
+/* Table Container with Scrolling */
+.team-table-container {
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 70vh; /* Limit the table height to 70% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+  overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+  border: 1px solid #ddd; /* Add a border to visually indicate the scroll area */
+}
+
+/* Table Styling */
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
   text-align: center;
+  font-size: 0.9rem;
+}
+.team-table th, .team-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
 }
 
-.player-info, .team-info {
+.team-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.team-table td {
+  word-wrap: break-word;
+  max-width: 200px;
   text-align: center;
-  margin-top: 2rem;
-}
-
-.player-info h2, .team-info h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.player-info ul, .team-info ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.player-info li, .team-info li {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  text-align: left;
 }
