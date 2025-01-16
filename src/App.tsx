@@ -6,19 +6,30 @@ import HomePage from './pages/HomePage';
 import PitchersPage from './pages/PitchersPage';
 import HittersPage from './pages/HittersPage';
 import TeamsPage from './pages/TeamsPage';
+import axios from "axios";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 function Layout({ children }) {
     const location = useLocation();
     const isHomepage = location.pathname === '/'; // Check if it's the homepage
+    const getQuote = () =>{
+        axios.get('http://localhost:8080/api/pitchers/N Ryan').then(response  => {
+            console.log(response);
+        }).catch(err=>{
+            console.log(err);
+        })
 
+    }
     return (
         <div className="app-layout">
             {/* Show sidebar only if not on the homepage */}
             {!isHomepage && (
                 <div className="sidebar">
                     <div>
+                        <div className={"app"}>
+                            <button onClick={getQuote}></button>
+                        </div>
                         <Link to="/">
                             <img src={logo} className="logo" alt="logo" />
                         </Link>
