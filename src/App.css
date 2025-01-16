@@ -175,4 +175,61 @@
 .search-bar:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}/* Search Bar Styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.player-info, .team-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.player-info h2, .team-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.player-info ul, .team-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.player-info li, .team-info li {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  text-align: left;
 }
