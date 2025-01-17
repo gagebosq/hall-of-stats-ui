@@ -18,7 +18,12 @@ const TeamsPage = () => {
         try {
             // Fetch teams by name
             const response = await axios.get(`http://localhost:8080/api/teams/${encodeURIComponent(searchTerm)}`);
-            setTeams(Array.isArray(response.data) ? response.data : [response.data]); // Ensure data is an array
+            const fetchedTeams = Array.isArray(response.data) ? response.data : [response.data]; // Ensure data is an array
+
+            // Sort the data by YEAR in descending order
+            fetchedTeams.sort((a, b) => b.year - a.year);
+
+            setTeams(fetchedTeams); // Update the sorted data in state
             setError(null); // Clear any previous errors
         } catch (err) {
             console.error(err);

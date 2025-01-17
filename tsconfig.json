@@ -3,5 +3,23 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "target": "ES6",                           // Specify ECMAScript target version
+    "lib": ["DOM", "DOM.Iterable", "ES6"],     // Libraries for the runtime
+    "allowJs": true,                           // Allow JavaScript files in the project
+    "skipLibCheck": true,                      // Skip type checking of declaration files
+    "strict": true,                            // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true,  // Disallow inconsistently-cased imports
+    "module": "ESNext",                        // Specify module code generation
+    "moduleResolution": "Node",               // Specify module resolution strategy
+    "esModuleInterop": true,                   // Enables interoperability for CommonJS modules
+    "resolveJsonModule": true,                 // Include JSON modules
+    "isolatedModules": true,                   // Ensure each file is treated as a separate module
+    "jsx": "react-jsx",                        // Specify JSX factory for React
+    "noEmit": true,                            // Do not emit output files
+    "allowSyntheticDefaultImports": true       // Allow default imports from modules without default export
+  },
+  "include": ["src"],                          // Files to include in the project
+  "exclude": ["node_modules", "build"]
 }
