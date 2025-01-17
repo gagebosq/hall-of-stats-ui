@@ -1,50 +1,123 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2c62a0e8-00cc-42c0-9d44-14e1290341d2" alt="logo" width="500" />
+</p>
+Hall of Stats is a comprehensive MLB statistics lookup application that allows users to explore baseball statistics spanning over the past two centuries. Whether you're interested in hitters, pitchers, or teams, this app provides detailed data and insights.
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+### 1. **Hitters**
+- Search for hitters by name to view their complete career statistics.
+- Detailed breakdown of stats such as:
+  - Games played
+  - Hits, home runs, RBIs
+  - Batting averages, slugging percentages, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. **Pitchers**
+- Lookup pitchers by name to access their performance data.
+- Comprehensive metrics including:
+  - Wins, losses, and saves
+  - ERA, strikeouts, innings pitched, and more.
 
-## Expanding the ESLint configuration
+### 3. **Teams**
+- Search for teams by name to explore their season-by-season statistics.
+- Data includes:
+  - Games played, wins, losses
+  - Runs scored, runs allowed
+  - Attendance, playoff performance, and more.
+  - 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Backend
+- **Language**: Java
+- **Framework**: Spring Boot
+- **Database**: PostgreSQL
+- **API**: RESTful API for data retrieval and search functionality
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Frontend
+- **Framework**: React (with Vite for fast development)
+- **Styling**: CSS
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Installation
+
+### Prerequisites
+- Node.js and npm installed
+- Java 17+ installed
+- PostgreSQL database set up
+
+### Backend Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/hall-of-stats.git
+   cd hall-of-stats
+   ```
+2. Navigate to the backend directory and build the application:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+3. Configure the PostgreSQL database:
+   - Update the `application.properties` file with your database credentials:
+     ```properties
+     spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     ```
+4. Run the backend server:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+### Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Access the app at:
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## Usage
+
+1. **Home Page**
+   - Navigate to the homepage to access buttons for hitters, pitchers, and teams.
+   
+2. **Search Functionality**
+   - Use the search bar at the top of each page to search for specific players or teams.
+
+3. **Dynamic Tables**
+   - View results in a dynamically generated, scrollable table.
+---
+
+## Screenshots(coming soon)
+
+---
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+- Major League Baseball for the inspiration and the data
+- Open-source tools like React, Spring Boot, and PostgreSQL
+
