@@ -2,7 +2,6 @@
   <img src="https://github.com/user-attachments/assets/2c62a0e8-00cc-42c0-9d44-14e1290341d2" alt="logo" width="500" />
 </p>
 Hall of Stats is a comprehensive MLB statistics lookup application that allows users to explore baseball statistics spanning over the past two centuries. Whether you're interested in hitters, pitchers, or teams, this app provides detailed data and insights.
----
 
 ## Features
 
