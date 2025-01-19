@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 const TeamsPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [teams, setTeams] = useState([]); // Expecting an array of teams

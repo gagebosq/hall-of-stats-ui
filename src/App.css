@@ -4,6 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+html {
+  font-size: 10px; /* Reduce the base font size (default is 16px) */
+}
+
+body {
+  transform: scale(0.9); /* Scale everything down by 90% */
+}
+
 
 .logo {
   width: 10em;
@@ -22,19 +30,18 @@
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 0px;
-  left: 3px;
-  width: 250px; /* adjust this value to set the sidebar's width */
+  top: 10px;
+  left: 10px;
+  width: 125px; /* adjust this value to set the sidebar's width */
   height: 100vh;
   color: #000000FF;
-  padding: 20px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .navigation {
   position: fixed;
   top: 200px;
-  left: 3px;
-  width: 250px; /* adjust this value to set the sidebar's width */
+  left: 50px;
+  width: 125px; /* adjust this value to set the sidebar's width */
   height: 100vh;
   padding: 20px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,12 +49,13 @@
 
 .content {
   display: flex; /* Flexbox to separate sidebar and main content */
-  margin-left: 250px; /* Offset content by the width of the sidebar */
-  padding: 1rem;
+  padding: 3rem;
   flex-direction: column; /* Ensure the content stacks vertically */
 }
+
+
 .main-content {
-    margin-left: 200px; /* Offset content by the width of the sidebar */
+    margin-left: 100px; /* Offset content by the width of the sidebar */
     flex-grow: 1; /* Allow content to grow */
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -144,12 +152,15 @@
 /* Table Container with Scrolling */
 .team-table-container {
   margin: 0 auto;
-  max-width: 90%;
+  justify-content: center;
+  display: flex;
   max-height: 70vh; /* Limit the table height to 70% of the viewport height */
   overflow-y: auto; /* Enable vertical scrolling if the content overflows */
   overflow-x: auto; /* Enable horizontal scrolling for wide tables */
   border: 1px solid #ddd; /* Add a border to visually indicate the scroll area */
+  resize: horizontal;
 }
+
 
 /* Table Styling */
 .team-table {
@@ -174,3 +185,4 @@
   max-width: 200px;
   text-align: center;
 }
+

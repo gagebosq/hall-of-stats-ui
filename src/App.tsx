@@ -48,8 +48,6 @@ function Layout({ children }) {
                     </div>
                 </div>
             )}
-
-            {/* Main Content Section */}
             <div className={isHomepage ? 'homepage-content' : 'content'}>
                 {children}
             </div>
