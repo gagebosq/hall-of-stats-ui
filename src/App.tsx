@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import logo from './assets/logo.jpg';
-import { Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
+import {Sidebar, Menu, MenuItem, sidebarClasses} from 'react-pro-sidebar';
 import './App.css';
 import HomePage from './pages/HomePage';
 import PitchersPage from './pages/PitchersPage';
@@ -13,33 +13,28 @@ function Layout({ children }) {
     const isHomepage = location.pathname === '/'; // Check if it's the homepage
     return (
         <div className="app-layout">
-            {/* Show sidebar only if not on the homepage */}
             {!isHomepage && (
                 <div className="sidebar">
-                    <div>
+                    <div className="logo-container">
                         <Link to="/">
                             <img src={logo} className="logo" alt="logo" />
                         </Link>
                     </div>
                     <div className="navigation">
-                        <Sidebar
-                            rootStyles={{
-                                [`.${sidebarClasses.container}`]: {
-                                    backgroundColor: 'white',
-                                    left: '0px',
+                        <Sidebar rootStyles={{
+                                width: '225px',
+                                minWidth: '225px'
+                        }}>
+                            <Menu menuItemStyles={{
+                                button: {
+                                    // the active class will be added automatically by react router
+                                    // so we can use it to style the active menu item
+                                    backgroundColor: 'transparent',
+                                    color: '#000000',
+                                    fontWeight: 'bold',
+                                    borderStyle: 'unset',
                                 },
-                            }}
-                        >
-                            <Menu
-                                menuItemStyles={{
-                                    button: {
-                                        [`&.active`]: {
-                                            backgroundColor: '#000000',
-                                            color: '#ffffff',
-                                        },
-                                    },
-                                }}
-                            >
+                            }}>
                                 <MenuItem component={<Link to="/pitchers" />}>Pitchers</MenuItem>
                                 <MenuItem component={<Link to="/hitters" />}>Hitters</MenuItem>
                                 <MenuItem component={<Link to="/teams" />}>Teams</MenuItem>
