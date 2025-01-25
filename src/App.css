@@ -85,6 +85,7 @@ body {
   align-items: center; /* Center vertically */
   text-align: center;
   flex-direction: column; /* Stack elements vertically */
+  font-size: 20px;
 }
 
 .homepage h1 {
@@ -174,9 +175,10 @@ body {
 
 
 .team-table {
-  width: 100%;
+  width: 86.5%;
   text-align: center;
   font-size: 0.9rem;;
+  position: absolute;
 }
 .team-table th, .team-table td {
   padding: 0.5rem;
@@ -193,4 +195,11 @@ body {
   word-wrap: break-word;
   max-width: 200px;
   text-align: center;
+}
+
+.player-info{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  font-size: 1.5rem;
 }

@@ -6,7 +6,7 @@ const HomePage = () => {
         <div className="homepage-content">
             <img src={logo} className="logo-home" alt="logo"/>
             <h1>Welcome to Hall of Stats</h1>
-            <p>Are you sure you want to see all stats from the past two centuries?</p>
+            <p>Are you sure you want to see stats from the past two centuries?</p>
             <div className="button-container">
                 <Link to="/teams" className="button">
                     Indubidily
